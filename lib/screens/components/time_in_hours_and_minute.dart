@@ -1,7 +1,6 @@
 import 'package:analog_clock_flutter/size_config.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:analog_clock_flutter/size_config.dart';
 
 class TimeInHourAndMinute extends StatefulWidget {
   @override

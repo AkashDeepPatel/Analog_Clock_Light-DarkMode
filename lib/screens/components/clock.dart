@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:math';
 import 'package:analog_clock_flutter/screens/components/clock_painter.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:analog_clock_flutter/models/my_theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class Clock extends StatefulWidget {
   @override
@@ -50,7 +53,25 @@ class _ClockState extends State<Clock> {
               ),
             ),
           ),
-        )
+        ),
+        Positioned(
+          top: 50,
+          left: 0,
+          right: 0,
+          child: Consumer<MyThemeModel>(
+            builder: (context, theme, child) => GestureDetector(
+              onTap: () => theme.changeTheme(),
+              child: SvgPicture.asset(
+                theme.isLightTheme
+                    ? "assets/icons/Sun.svg"
+                    : "assets/icons/Moon.svg",
+                height: 24,
+                width: 24,
+                color: Theme.of(context).primaryColor,
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }

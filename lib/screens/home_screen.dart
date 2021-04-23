@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
       title: Text(""),
       leading: IconButton(
         icon: SvgPicture.asset(
-          "icons/Settings.svg",
+          "assets/icons/Settings.svg",
           color: Theme.of(context).iconTheme.color,
         ),
         onPressed: () => Scaffold.of(context).openDrawer(),
